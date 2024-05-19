@@ -1,4 +1,5 @@
 FROM openjdk:17
+WORKDIR /app
+ADD /target/devops-integration.jar app.jar
 EXPOSE 8080
-ADD target/devops-integration.jar devops-integration.jar
-ENTRYPOINT ["java", "-jar", "devops-integration.jar"]
+CMD ["java", "-jar", "app.jar"]
